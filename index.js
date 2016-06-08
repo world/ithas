@@ -21,7 +21,7 @@ ithas.data = function(obj, str) {
   const IsObjThatHasData = item => _.isObject(item) || _.isArray(item) ? _.some(item, IsData) : false
 
   // a warning to help us keep our event loop lowfat
-  if (++itHasDataCallCount % 10000 === 0 && DEV)  console.warning('woah lots of ithas.data calls', itHasDataCallCount)
+  // if (++itHasDataCallCount % 10000 === 0 && DEV) console.warn('woah lots of ithas.data calls', itHasDataCallCount)
 
   // 1 param check
   if (arguments.length === 1) {
@@ -57,7 +57,7 @@ ithas.data = function(obj, str) {
 
 //ithas.key has not yet been cleaned up but the shit works... 
 ithas.key = function(obj, str) {
-  if (++itHasKeyCallCount % 10000 === 0 && DEV) console.warning('woah lots of ithas.key calls', itHasKeyCallCount)
+  // if (++itHasKeyCallCount % 10000 === 0 && DEV) console.warn('woah lots of ithas.key calls', itHasKeyCallCount)
   var keys, key;
 
   // return false if obj is either null or undefined
