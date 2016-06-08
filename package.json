@@ -1,6 +1,6 @@
 {
   "name": "ithas",
-  "version": "0.5.15",
+  "version": "0.5.16",
   "description": "magical convenience for checking if any datatype has a value, key, or data in the datatype, or the key. Handles null, undefined, NaN, and every other edge case. Where lodash is too afraid to go, ithas is to the rescue!",
   "main": "index.js",
   "scripts": {
