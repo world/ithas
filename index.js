@@ -4,8 +4,8 @@ var ithas = function() {}
 var _     = require('lodash')
 
 // TODO: make these not globally scoped
-var HAS_DATA_CNT = 0
-var HAS_KEY_CNT  = 0
+var itHasDataCallCount = 0
+var itHasKeyCallCount  = 0
 
 //ithas.data has been cleaned up
 ithas.data = function(obj, str) {
@@ -21,7 +21,7 @@ ithas.data = function(obj, str) {
   const IsObjThatHasData = item => _.isObject(item) || _.isArray(item) ? _.some(item, IsData) : false
 
   // a warning to help us keep our event loop lowfat
-  if (++HAS_DATA_CNT % 10000 === 0 && DEV)  b('WOAH LOTS OF HAS DATA CALLS', HAS_DATA_CNT)
+  if (++itHasDataCallCount % 10000 === 0 && DEV)  console.warning('woah lots of ithas.data calls', itHasDataCallCount)
 
   // 1 param check
   if (arguments.length === 1) {
@@ -57,7 +57,7 @@ ithas.data = function(obj, str) {
 
 //ithas.key has not yet been cleaned up but the shit works... 
 ithas.key = function(obj, str) {
-  if (++HAS_KEY_CNT % 10000 === 0 && DEV) b('WOAH LOTS OF HAS KEY CALLS', HAS_KEY_CNT)
+  if (++itHasKeyCallCount % 10000 === 0 && DEV) console.warning('woah lots of ithas.key calls', itHasKeyCallCount)
   var keys, key;
 
   // return false if obj is either null or undefined
