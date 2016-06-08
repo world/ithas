@@ -1,0 +1,41 @@
+{
+  "name": "ithas",
+  "version": "0.5.14",
+  "description": "magical convenience for checking if any datatype has a value, key, or data in the datatype, or the key. Handles null, undefined, NaN, and every other edge case. Where lodash is too afraid to go, ithas is to the rescue!",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --bail `find ./tests/ -name '*.test.js'`"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/world/ithas"
+  },
+  "keywords": [
+    "node",
+    "javascript",
+    "null",
+    "undefined",
+    "NaN",
+    "dot-notation",
+    "lodash",
+    "validation",
+    "pr0n"
+  ],
+  "author": "Chris Lyman <chrismikeson@yahoo.com.com> (https://www.linkedin.com/in/chrismlyman)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/world/ithas/issues"
+  },
+  "homepage": "https://github.com/world/ithas",
+  "dependencies": {
+    "lodash": "^4.13.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "chai-things": "^0.2.0",
+    "colors": "^1.1.2",
+    "lodash": "^4.13.1",
+    "should": "^9.0.0"
+  }
+}
