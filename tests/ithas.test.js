@@ -18,8 +18,26 @@ var is = {}
 Object.defineProperty(is, 'true',  { value: ' == ' + 'true'.green })
 Object.defineProperty(is, 'false', { value: ' == ' + 'false'.red  })
 
-//////////////////////////// ONE ARG PASSED
-////////////////////////////////////////////////////////////////////////////////
+describe('ithas.value... not much to test since just a lodash stub now...', () => {
+  var obj1 = {key:1}
+  var prettyObj1 = JSON.stringify(obj1)
+  var obj2 = {key1:1, key2: undefined}
+  var prettyObj2 = JSON.stringify(obj2)
+  var obj3 = {key:true}
+  var prettyObj3 = JSON.stringify(obj3)
+  it(`ithas.value(${prettyObj1}, 'key', 1)` + is.true, function () { ithas.value(obj1, 'key', 1).should.be.true })
+  it(`ithas.value(${prettyObj1}, 'key', 0)` + is.false, function () { ithas.value(obj1, 'key', 0).should.be.false })
+  it(`ithas.value(${prettyObj1}, 'key', undefined)` + is.false, function () { ithas.value(obj1, 'key', undefined).should.be.false })
+  it(`ithas.value(${prettyObj1}, 'key', null)` + is.false, function () { ithas.value(obj1, 'key', null).should.be.false })
+  it(`ithas.value(${prettyObj1}, 'key', true)` + is.false, function () { ithas.value(obj1, 'key', true).should.be.false })
+  it(`ithas.value(${prettyObj1}, 'key', false)` + is.false, function () { ithas.value(obj1, 'key', true).should.be.false })
+  it(`ithas.value(${prettyObj2}, 'key2', undefined)` + is.true, function () { ithas.value(obj2, 'key2', undefined).should.be.true })
+  it(`ithas.value(${prettyObj2}, 'key2', null)` + is.true, function () { ithas.value(obj2, 'key2', undefined).should.be.true })
+  it(`ithas.value(${prettyObj3}, 'key', true)` + is.true, function () { ithas.value(obj3, 'key', true).should.be.true })
+  it(`ithas.value(${prettyObj3}, 'key', 1)` + is.false, function () { ithas.value(obj3, 'key', 1).should.be.false })
+  it(`ithas.value(${prettyObj3}, 'key', false)` + is.false, function () { ithas.value(obj3, 'key', false).should.be.false })
+})//ithas.value
+
 describe('ithas.data', () => {
   describe('1 param passed of any type', () =>  { 
     describe('null || undefined', function () { 
@@ -89,9 +107,6 @@ describe('ithas.data', () => {
     })
   }) // describe('Single param passed (just obj no str)'
 
-  ////////////////////////////////////////////////////////////////////////////////
-  //////////////////////////// TWO ARGS PASSED
-  ////////////////////////////////////////////////////////////////////////////////
   describe('2 params passed where param1 == obj && param2 == str of dot notation keys', function () { 
     it("ithas.data({key:'value'}, 'key')" + is.true, function () { ithas.data({key:'value'}, 'key').should.be.true })
     it(`ithas.data({key:'value'}, 'missingKey')${is.false}`, function () { ithas.data({key:'value'}, 'missingKey').should.be.false })

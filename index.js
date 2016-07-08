@@ -7,6 +7,12 @@ var _     = require('lodash')
 var itHasDataCallCount = 0
 var itHasKeyCallCount  = 0
 
+// ithas.value has been repalced by new lodash function _.get. Just keeping it in
+// here for backward compatibility of people already using ithas module
+ithas.value = function(obj, str, val) {
+  return _.get(obj, str) === val
+}
+
 //ithas.data has been cleaned up
 ithas.data = function(obj, str) {
 
