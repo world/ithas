@@ -25,6 +25,10 @@ describe('ithas.value... not much to test since just a lodash stub now...', () =
   var prettyObj2 = JSON.stringify(obj2)
   var obj3 = {key:true}
   var prettyObj3 = JSON.stringify(obj3)
+  var obj4 = undefined
+  var prettyObj4 = JSON.stringify(obj4)
+  var obj5 = {key:undefined}
+  var prettyObj5 = JSON.stringify(obj5)
   it(`ithas.value(${prettyObj1}, 'key', 1)` + is.true, function () { ithas.value(obj1, 'key', 1).should.be.true })
   it(`ithas.value(${prettyObj1}, 'key', 0)` + is.false, function () { ithas.value(obj1, 'key', 0).should.be.false })
   it(`ithas.value(${prettyObj1}, 'key', undefined)` + is.false, function () { ithas.value(obj1, 'key', undefined).should.be.false })
@@ -36,6 +40,8 @@ describe('ithas.value... not much to test since just a lodash stub now...', () =
   it(`ithas.value(${prettyObj3}, 'key', true)` + is.true, function () { ithas.value(obj3, 'key', true).should.be.true })
   it(`ithas.value(${prettyObj3}, 'key', 1)` + is.false, function () { ithas.value(obj3, 'key', 1).should.be.false })
   it(`ithas.value(${prettyObj3}, 'key', false)` + is.false, function () { ithas.value(obj3, 'key', false).should.be.false })
+  it(`ithas.value(${prettyObj4}, 'key', false)` + is.false, function () { ithas.value(obj4, 'key', false).should.be.false })
+  it(`ithas.value(${prettyObj5}, 'key', false)` + is.false, function () { ithas.value(obj5, 'key', false).should.be.false })
 })//ithas.value
 
 describe('ithas.data', () => {
